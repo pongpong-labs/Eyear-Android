@@ -1,7 +1,8 @@
-package com.pongponglabs.eyear
+package com.pongponglabs.eyear.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.pongponglabs.eyear.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

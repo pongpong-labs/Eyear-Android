@@ -1,4 +1,4 @@
-package com.pongponglabs.eyear
+package com.pongponglabs.eyear.ui
 
 
 import android.app.Activity
@@ -6,12 +6,11 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
-import android.speech.SpeechRecognizer
-import android.speech.tts.TextToSpeech
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+import com.pongponglabs.eyear.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -39,7 +38,9 @@ class MainActivity : AppCompatActivity() {
 
 
             try {
-                startActivityForResult(sttIntent, REQUEST_CODE_STT)
+                startActivityForResult(sttIntent,
+                    REQUEST_CODE_STT
+                )
             } catch (e: ActivityNotFoundException) {
                 e.printStackTrace()
                 Toast.makeText(this, "Your device does not support STT.", Toast.LENGTH_LONG).show()
