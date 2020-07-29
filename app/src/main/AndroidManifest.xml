@@ -12,25 +12,33 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.auth.RegisterPageActivity"></activity>
-        <activity android:name=".ui.auth.FindPasswordActivity" />
-        <activity android:name=".ui.auth.RegisterActivity" />
+
+        <activity android:name=".ui.auth.RegisterPageActivity">
+
+        </activity>
+        <activity android:name=".ui.auth.FindPasswordActivity"
+            android:parentActivityName=".ui.auth.LoginPageActivity"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+
+
         <activity android:name=".ui.auth.LoginPageActivity" />
+
+
         <activity
             android:name=".ui.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".ui.MainActivity">
+
         </activity>
     </application>
 
