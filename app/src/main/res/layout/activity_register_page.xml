@@ -8,31 +8,30 @@
     android:orientation="vertical"
     tools:context=".ui.auth.RegisterPageActivity">
 
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/tv_register_welcome"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:fontFamily="@font/spoqabold"-->
-<!--        android:textColor="#686565"-->
-<!--        android:textSize="35dp"-->
-<!--        android:text="반갑습니다,"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/register_logo"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        />-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_register_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/spoqabold"
+        android:textColor="#686565"
+        android:textSize="35dp"
+        android:text="반갑습니다,"
+        app:layout_constraintBottom_toTopOf="@+id/register_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/register_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/register_logo"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_register_welcome2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.textview.MaterialTextView
@@ -40,8 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="80dp"
         android:fontFamily="@font/spoqabold"
         android:textColor="#686565"
         android:textSize="40dp"
