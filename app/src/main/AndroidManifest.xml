@@ -12,13 +12,19 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.fragment.ChattingFragment"></activity>
+
+        <activity android:name=".ui.fragment.MainFragment"/>
+        <activity android:name=".ui.fragment.ChattingFragment" />
         <activity android:name=".ui.fragment.SettingFragment" />
-        <activity android:name=".ui.fragment.MainFragment" />
+
         <activity android:name=".ui.auth.RegisterPageActivity" />
+
+
+
         <activity
             android:name=".ui.auth.FindPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".ui.auth.LoginPageActivity" />
         <activity
             android:name=".ui.SplashActivity"

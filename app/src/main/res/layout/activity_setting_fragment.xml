@@ -136,7 +136,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logoutBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
