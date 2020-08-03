@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,38 +15,155 @@
         android:fontFamily="@font/spoqabold"
         android:textColor="#686565"
         android:textSize="35dp"
-        android:text="반갑습니다,"
-        app:layout_constraintBottom_toTopOf="@+id/register_logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:text="반갑습니다," />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/register_logo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/register_logo"
-        app:layout_constraintEnd_toStartOf="@+id/tv_register_welcome2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/register_logo"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/register_logo" />
 
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_register_welcome2"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_register_welcome2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="40dp"
+            android:text="입니다" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="80dp"
-        android:fontFamily="@font/spoqabold"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/register_univ_spinner"
+            android:overlapAnchor="false"
+            android:layout_marginStart="40dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/register_department_spinner"
+            android:overlapAnchor="false"
+            android:layout_marginEnd="40dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputRegisterName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
-        android:textSize="40dp"
-        android:text="입니다"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="text"
+        android:background="@drawable/rounded_border_edittext"
+        android:hint="이름"
+        android:maxLength="10"
+        android:maxLines="1"/>
 
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputRegisterId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/spoqaregular"
+        android:textColor="#686565"
+        android:inputType="text"
+        android:background="@drawable/rounded_border_edittext"
+        android:hint="아이디"
+        android:maxLength="10"
+        android:maxLines="1"/>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputRegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/spoqaregular"
+        android:textColor="#686565"
+        android:inputType="text"
+        android:background="@drawable/rounded_border_edittext"
+        android:hint="이메일"
+        android:maxLength="10"
+        android:maxLines="1"/>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputRegisterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/spoqaregular"
+        android:textColor="#686565"
+        android:inputType="text"
+        android:background="@drawable/rounded_border_edittext"
+        android:hint="비밀번호"
+        android:maxLength="10"
+        android:maxLines="1"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputRegisterPasswordValidator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/spoqaregular"
+        android:textColor="#686565"
+        android:inputType="text"
+        android:background="@drawable/rounded_border_edittext"
+        android:hint="비밀번호 확인"
+        android:maxLength="10"
+        android:maxLines="1"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:fontFamily="@font/spoqaregular"
+        android:background="@drawable/rounded_border_loginbtn"
+        android:textColor="@color/button_color"
+        android:text="회원가입" />
+
+
+</LinearLayout>

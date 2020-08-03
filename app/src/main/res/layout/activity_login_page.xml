@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
-        android:text="비밀번호를 잊으셨나요?"
+        android:text="아이디, 비밀번호를 잊으셨나요?"
         android:layout_marginTop="18dp"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn"
         app:layout_constraintLeft_toLeftOf="parent"
