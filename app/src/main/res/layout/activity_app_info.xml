@@ -24,8 +24,6 @@
         android:layout_marginRight="20dp"
         android:orientation="vertical">
 
-
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/appVersionBtn"
             android:layout_width="wrap_content"

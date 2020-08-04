@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.account.SecessionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/secessionMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/spoqabold"
+        android:textColor="#686565"
+        android:textSize="40dp"
+        android:text="회원 탈퇴"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/secessionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/spoqabold"
+        android:textColor="#686565"
+        android:textSize="18dp"
+        android:text="정말 탈퇴하시겠습니까? \n \n현재 저장된 모든 정보가 삭제됩니다.
+        \n \n개인정보 보호를 위한 본인확인 절차이니 회원 로그인시 사용하는 비밀번호를 입력해주세요."/>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputSecessionPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingStart="20dp"
+        android:fontFamily="@font/spoqaregular"
+        android:textColor="#686565"
+        android:inputType="text"
+        android:background="@drawable/rounded_border_edittext"
+        android:hint="비밀번호"
+        android:maxLength="10"
+        android:maxLines="1"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/secessionFinishedBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="탈퇴 확인"
+            android:textSize="38dp"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#e41919" />
+
+    </RelativeLayout>
+
+</LinearLayout>
