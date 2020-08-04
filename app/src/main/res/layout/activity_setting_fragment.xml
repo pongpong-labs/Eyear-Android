@@ -114,7 +114,7 @@
             android:layout_height="3dp"
             android:background="#e4e4e4"/>
 
-        <com.google.android.material.textview.MaterialTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/appInfoBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

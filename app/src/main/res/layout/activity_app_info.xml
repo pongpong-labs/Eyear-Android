@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.info.AppInfoActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settingMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/spoqabold"
+        android:textColor="#686565"
+        android:textSize="40dp"
+        android:text="앱 정보" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/appVersionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="앱 버전" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/termsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="이용약관" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/openSourceBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="오픈소스 라이센스"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/privacyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="개인정보 처리방침" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
