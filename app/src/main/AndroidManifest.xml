@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.info.AppInfoActivity"/>
+        <activity android:name=".ui.info.AppInfoActivity" />
         <activity android:name=".ui.info.PrivacyActivity" />
         <activity android:name=".ui.info.OpensourceActivity" />
         <activity android:name=".ui.info.TermsActivity" />
@@ -36,7 +36,10 @@
         <activity android:name=".ui.fragment.ChattingFragment" />
         <activity android:name=".ui.fragment.SettingFragment" />
         <activity android:name=".ui.auth.RegisterPageActivity" />
-
+        <activity android:name=".ui.account.SecessionActivity"/>
+        <activity android:name=".ui.account.PasswordChangeActivity" />
+        <activity android:name=".ui.account.ProfileSettingActivity" />
+        <activity android:name=".ui.account.AccountInfoActivity" />
     </application>
 
 </manifest>

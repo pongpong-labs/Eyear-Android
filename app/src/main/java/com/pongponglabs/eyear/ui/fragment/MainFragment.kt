@@ -9,7 +9,11 @@ import com.pongponglabs.eyear.R
 
 class MainFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_main_fragment, container, false)
+    lateinit var mView: View
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        mView = inflater.inflate(R.layout.activity_main_fragment, container, false)
+
+        return mView
     }
 }

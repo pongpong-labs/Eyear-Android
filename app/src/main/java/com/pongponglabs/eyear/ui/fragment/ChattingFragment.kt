@@ -1,6 +1,5 @@
 package com.pongponglabs.eyear.ui.fragment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,11 @@ import com.pongponglabs.eyear.R
 
 class ChattingFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_chatting_fragment, container, false)
+    lateinit var mView: View
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        mView = inflater.inflate(R.layout.activity_chatting_fragment, container, false)
+
+        return mView
     }
 }

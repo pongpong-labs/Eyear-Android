@@ -82,7 +82,7 @@
         android:inputType="text"
         android:background="@drawable/rounded_border_edittext"
         android:hint="이름"
-        android:maxLength="10"
+        android:maxLength="5"
         android:maxLines="1"/>
 
 

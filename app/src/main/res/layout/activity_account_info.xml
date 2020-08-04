@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.account.AccountInfoActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settingMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/spoqabold"
+        android:textColor="#686565"
+        android:textSize="35dp"
+        android:text="내 정보 및 계정 관리" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profileSettingBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:text="회원정보 수정"
+            android:textColor="#686565"
+            android:textSize="30dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/passwordChangeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="비밀번호 변경" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/secessionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="회원탈퇴" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+    </LinearLayout>
+
+</LinearLayout>
