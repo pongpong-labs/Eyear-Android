@@ -9,28 +9,22 @@
     tools:context=".ui.fragment.ChattingFragment">
 
 
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/messageMainText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:fontFamily="@font/spoqabold"-->
-<!--        android:textColor="#686565"-->
-<!--        android:textSize="35dp"-->
-<!--        android:text="메세지함" />-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/messageMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/spoqabold"
+        android:textColor="#686565"
+        android:textSize="35dp"
+        android:text="메세지함" />
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp">
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:background="@drawable/tab_layout_background"
         app:tabMode="scrollable"
@@ -46,10 +40,9 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </RelativeLayout>
 
 
 </LinearLayout>

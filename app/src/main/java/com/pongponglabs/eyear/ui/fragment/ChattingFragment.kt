@@ -18,14 +18,13 @@ import kotlinx.android.synthetic.main.activity_chatting_fragment.*
 
 class ChattingFragment : Fragment() {
 
-    lateinit var mView: View
     private var mViewPager: ViewPager? = null
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        mView = inflater.inflate(R.layout.activity_chatting_fragment, container, false)
+        val view = inflater.inflate(R.layout.activity_chatting_fragment, container, false)
 
         val fragmentManager = (activity)!!.supportFragmentManager
         mViewPager = view!!.findViewById(R.id.viewpager)
@@ -33,13 +32,13 @@ class ChattingFragment : Fragment() {
             PagerAdapter(
                 fragmentManager
             )
-        mViewPager!!.currentItem = 1
+        mViewPager!!.currentItem = 0
 
-        val tabLayout = view!!.findViewById<View>(R.id.tabLayout) as TabLayout
+        val tabLayout = view.findViewById<View>(R.id.tabLayout) as TabLayout
         tabLayout.setupWithViewPager(mViewPager)
 
-        tabLayout.getTabAt(0)!!.setText("메세지")
-        tabLayout.getTabAt(1)!!.setText("알림")
+        tabLayout.getTabAt(0)!!.text = "메세지"
+        tabLayout.getTabAt(1)!!.text = "알림"
         mViewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) = tab.select()
@@ -51,7 +50,7 @@ class ChattingFragment : Fragment() {
             }
         })
 
-        return mView
+        return view
     }
     class PagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         override fun getItem(position: Int): Fragment {
