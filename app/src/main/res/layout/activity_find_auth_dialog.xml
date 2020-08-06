@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    tools:context=".ui.auth.FindAuthDialog">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/findIdBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/spoqaregular"
+        android:background="@drawable/rounded_border_loginbtn"
+        android:textColor="@color/button_color"
+        android:text="아이디 찾기"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/findPasswordBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/spoqaregular"
+        android:background="@drawable/rounded_border_loginbtn"
+        android:textColor="@color/button_color"
+        android:text="비밀번호 찾기"/>
+
+</LinearLayout>

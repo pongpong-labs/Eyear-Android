@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pongponglabs.eyear">
+    package="com.pongponglabs.eyear" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -11,15 +11,16 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme" >
+        <activity android:name=".ui.auth.FindIdActivity" >
+        </activity>
         <activity
             android:name=".ui.auth.FindPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.auth.LoginPageActivity" />
         <activity
             android:name=".ui.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,10 +37,11 @@
         <activity android:name=".ui.fragment.ChattingFragment" />
         <activity android:name=".ui.fragment.SettingFragment" />
         <activity android:name=".ui.auth.RegisterPageActivity" />
-        <activity android:name=".ui.account.SecessionActivity"/>
+        <activity android:name=".ui.account.SecessionActivity" />
         <activity android:name=".ui.account.PasswordChangeActivity" />
         <activity android:name=".ui.account.ProfileSettingActivity" />
         <activity android:name=".ui.account.AccountInfoActivity" />
+        <activity android:name=".ui.auth.FindAuthDialog"/>
     </application>
 
 </manifest>
