@@ -16,7 +16,8 @@ interface API {
 
     @POST("/member/change/pw")
     @FormUrlEncoded
-    fun changePw(@Field("idx") idx : Int, @Field("new_pw") new_pw: String) : Call<Users>
+    fun changePw(@Field("idx") idx : Int,
+                 @Field("new_pw") new_pw: String) : Call<Users>
 
     @GET("/member/check/email")
     @FormUrlEncoded
@@ -28,11 +29,13 @@ interface API {
 
     @POST("/member/check/pw")
     @FormUrlEncoded
-    fun checkPw(@Field("idx") idx : Int, @Field("password") password : String) : Call<Users>
+    fun checkPw(@Field("idx") idx : Int,
+                @Field("password") password : String) : Call<Users>
 
     @POST("/member/find/id")
     @FormUrlEncoded
-    fun findId(@Field("name") name : String, @Field("email") email: String) : Call<Users>
+    fun findId(@Field("name") name : String,
+               @Field("email") email: String) : Call<Users>
 
     @POST("/member/init/pw")
     @FormUrlEncoded
@@ -53,7 +56,8 @@ interface API {
 
     @POST("/member/login")
     @FormUrlEncoded
-    fun logIn(@Field("uid") id : String, @Field("password") pw : String) : Call<Users>
+    fun logIn(@Field("uid") id : String,
+              @Field("password") pw : String) : Call<Users>
 
     @GET("/member/logout")
     @FormUrlEncoded
