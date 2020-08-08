@@ -36,12 +36,19 @@ interface API {
 
     @POST("/member/init/pw")
     @FormUrlEncoded
-    fun findPw(@Field("uid") id : String, @Field("name") name : String, @Field("email") email: String) : Call<Users>
+    fun findPw(@Field("uid") id : String,
+               @Field("name") name : String,
+               @Field("email") email: String) : Call<Users>
 
     @POST("/member/join")
     @FormUrlEncoded
-    fun join(@Field("uid") id : String, @Field("password") pw: String, @Field("role") role: String,
-                 @Field("name") name : String, @Field("email") email : String, @Field("univ") univ : Int, @Field("dept") dept : Int)
+    fun join(@Field("uid") id : String,
+             @Field("password") pw: String,
+             @Field("role") role: String,
+             @Field("name") name : String,
+             @Field("email") email : String,
+             @Field("univ") univ : Int,
+             @Field("dept") dept : Int)
             : Call<Users>
 
     @POST("/member/login")
