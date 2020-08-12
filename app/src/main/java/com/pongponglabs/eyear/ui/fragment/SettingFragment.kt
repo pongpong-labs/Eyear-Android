@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_setting_fragment.view.*
 
 class SettingFragment : Fragment() {
 
-    lateinit var mView: View
+    private lateinit var mView: View
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         mView = inflater.inflate(R.layout.activity_setting_fragment, container, false)
