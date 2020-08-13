@@ -161,7 +161,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:fontFamily="@font/spoqaregular"
-        android:background="@drawable/rounded_border_loginbtn"
+        android:background="@drawable/gradation_btn"
         android:textColor="@color/button_color"
         android:text="회원가입" />
 

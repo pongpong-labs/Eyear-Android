@@ -16,7 +16,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:fontFamily="@font/spoqaregular"
-        android:background="@drawable/rounded_border_loginbtn"
+        android:background="@drawable/gradation_btn"
         android:textColor="@color/button_color"
         android:text="아이디 찾기"/>
 
@@ -29,7 +29,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:fontFamily="@font/spoqaregular"
-        android:background="@drawable/rounded_border_loginbtn"
+        android:background="@drawable/gradation_btn"
         android:textColor="@color/button_color"
         android:text="비밀번호 찾기"/>
 
