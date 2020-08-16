@@ -58,8 +58,8 @@ class LoginPageActivity : AppCompatActivity(){
 
     private fun login() {
     val login = HashMap<String, String>()
-    login["uid"] = inputLoginId.text.toString()
-    login["password"] = inputLoginPw.text.toString()
+    login["uid"] = inputLoginId.text.toString().trim()
+    login["password"] = inputLoginPw.text.toString().trim()
     loginBtn.isClickable = false
         RetrofitClient.retrofitService.logIn(login).enqueue(object : Callback<Users> {
             override fun onResponse(call: Call<Users>?, response: Response<Users>?) {

@@ -29,9 +29,9 @@ class FindPasswordActivity : AppCompatActivity() {
 
     private fun findPw() {
         val findPassword = HashMap<String, String>()
-        findPassword["uid"] = inputResetId.text.toString()
-        findPassword["name"] = inputResetName.text.toString()
-        findPassword["email"] = inputResetEmail.text.toString()
+        findPassword["uid"] = inputResetId.text.toString().trim()
+        findPassword["name"] = inputResetName.text.toString().trim()
+        findPassword["email"] = inputResetEmail.text.toString().trim()
 
         RetrofitClient.retrofitService.findPw(findPassword).enqueue(object : Callback<Users> {
             override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
