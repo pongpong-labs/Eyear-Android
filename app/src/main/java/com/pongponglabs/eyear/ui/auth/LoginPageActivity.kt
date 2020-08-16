@@ -33,7 +33,7 @@ class LoginPageActivity : AppCompatActivity(){
             val builder = AlertDialog.Builder(this)
             builder.setTitle("아이디, 비밀번호를 잊으셨나요?")
             builder.setNegativeButton("취소", null)
-            .create()
+                .create()
             val v1 = layoutInflater.inflate(R.layout.activity_find_auth_dialog, null)
             builder.setView(v1)
             val btn1: AppCompatButton? = v1.findViewById(R.id.findIdBtn)
@@ -57,10 +57,9 @@ class LoginPageActivity : AppCompatActivity(){
 
 
     private fun login() {
-    val login = HashMap<String, String>()
-    login["uid"] = inputLoginId.text.toString().trim()
-    login["password"] = inputLoginPw.text.toString().trim()
-    loginBtn.isClickable = false
+        val login = HashMap<String, String>()
+        login["uid"] = inputLoginId.text.toString().trim()
+        login["password"] = inputLoginPw.text.toString().trim()
         RetrofitClient.retrofitService.logIn(login).enqueue(object : Callback<Users> {
             override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                 when (response!!.code()) {
@@ -69,8 +68,7 @@ class LoginPageActivity : AppCompatActivity(){
                         finish()
                     }
                     400 -> {
-                        loginBtn.isClickable = true
-                        Toast.makeText(this@LoginPageActivity, "존재하지 않습니다. 아이디 또는 비밀번호를 확인해주세요.",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginPageActivity, "존재하지 않은 사용자입니다.",Toast.LENGTH_SHORT).show()
                     }
                 }
             }
