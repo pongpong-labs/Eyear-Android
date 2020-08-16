@@ -17,4 +17,13 @@
         android:textSize="40dp"
         android:text="이용약관" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#686565"
+        android:text="@string/http_pongponglabs_kr_2020_1_1_1_http_pongponglabs_kr"/>
+
+
 </LinearLayout>

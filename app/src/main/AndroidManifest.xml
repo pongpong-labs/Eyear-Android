@@ -17,6 +17,7 @@
             android:name=".ui.auth.FindPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.auth.LoginPageActivity" />
+
         <activity
             android:name=".ui.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -41,7 +42,7 @@
         <activity android:name=".ui.account.ProfileSettingActivity" />
         <activity android:name=".ui.account.AccountInfoActivity" />
         <activity android:name=".ui.auth.FindAuthDialog" />
-        <activity android:name=".ui.script.ScriptActivity"
+        <activity android:name=".ScriptActivity"
             android:screenOrientation="landscape"/>
         <activity android:name=".ui.auth.FindIdActivity"/>
 

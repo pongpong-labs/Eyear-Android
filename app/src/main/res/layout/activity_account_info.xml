@@ -57,6 +57,21 @@
             android:background="#e4e4e4"/>
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqabold"
+            android:textColor="#686565"
+            android:textSize="30dp"
+            android:text="로그아웃" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#e4e4e4"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/secessionBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

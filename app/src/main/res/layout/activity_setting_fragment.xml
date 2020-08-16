@@ -123,29 +123,6 @@
             android:textSize="38dp"
             android:text="앱 정보" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="#e4e4e4"/>
-
     </LinearLayout>
-
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/logoutBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="로그아웃"
-        android:textSize="38dp"
-        android:fontFamily="@font/spoqabold"
-        android:textColor="#686565" />
-
-</RelativeLayout>
 
 </LinearLayout>

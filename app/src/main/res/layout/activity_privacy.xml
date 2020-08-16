@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.info.PrivacyActivity">
 
     <com.google.android.material.textview.MaterialTextView
@@ -15,5 +16,13 @@
         android:textColor="#686565"
         android:textSize="40dp"
         android:text="개인정보 처리방침"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#686565"
+        android:text="@string/http_pongponglabs_kr_2020_1_1_1_http_pongponglabs_kr"/>
 
 </LinearLayout>

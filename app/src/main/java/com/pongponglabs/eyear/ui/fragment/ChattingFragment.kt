@@ -7,14 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.pongponglabs.eyear.R
 import com.pongponglabs.eyear.ui.fragment.message.AlertFragment
 import com.pongponglabs.eyear.ui.fragment.message.MessageFragment
-import kotlinx.android.synthetic.main.activity_chatting_fragment.*
 
 class ChattingFragment : Fragment() {
 

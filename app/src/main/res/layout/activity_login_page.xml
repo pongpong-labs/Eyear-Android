@@ -10,8 +10,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/loginImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:srcCompat="@drawable/login_logo"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toTopOf="@+id/inputLoginId"
@@ -26,11 +26,9 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:paddingStart="20dp"
-        android:layout_marginTop="100dp"
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="아이디"
         android:maxLength="10"
         android:maxLines="1"
@@ -52,7 +50,6 @@
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="비밀번호"
         android:maxLength="10"
         android:maxLines="1"
@@ -72,7 +69,7 @@
         android:background="@drawable/gradation_btn"
         android:textColor="@color/button_color"
         android:text="로그인"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputLoginPw" />
 
