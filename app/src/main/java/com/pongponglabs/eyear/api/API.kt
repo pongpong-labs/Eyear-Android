@@ -1,6 +1,7 @@
 package com.pongponglabs.eyear.api
 
 import com.pongponglabs.eyear.api.data.Users
+import com.pongponglabs.eyear.api.data.findPw
 import com.pongponglabs.eyear.api.request.findPwReq
 import retrofit2.Call
 import retrofit2.http.*
@@ -81,11 +82,9 @@ interface API {
     @GET("/member/check/email")
     fun checkEmail(@Query("email") email: String) : Call<Users>
 
-
+    @Headers("Content-Type: application/json")
     @POST("/member/find/id")
-    @FormUrlEncoded
-    fun findId(@Query("name") name : String,
-               @Query("email") email: String) : Call<Users>
+    fun findId(@Body findIdReq : HashMap<String, String>) : Call<findPw>
 
     @POST("/member/check/pw")
     @FormUrlEncoded

@@ -38,6 +38,8 @@ class FindPasswordActivity : AppCompatActivity() {
                 when (response!!.code()) {
                     200 -> {
                         Toast.makeText(this@FindPasswordActivity, "비밀번호 변경 이메일을 요청했습니다. 가입하신 이메일 수신함을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this@FindPasswordActivity, MainActivity::class.java))
+                        finish()
                     }
                     else -> {
                         Toast.makeText(this@FindPasswordActivity, "요청에 실패했습니다.", Toast.LENGTH_SHORT).show()
