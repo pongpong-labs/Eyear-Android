@@ -2,12 +2,18 @@ package com.pongponglabs.eyear.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.pongponglabs.eyear.R
+import com.pongponglabs.eyear.api.RetrofitClient
+import com.pongponglabs.eyear.api.data.Users
 import com.pongponglabs.eyear.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_login_page.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginPageActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +21,7 @@ class LoginPageActivity : AppCompatActivity(){
         setContentView(R.layout.activity_login_page)
 
         loginBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            login()
         }
 
         registerBtn.setOnClickListener{
@@ -47,5 +52,31 @@ class LoginPageActivity : AppCompatActivity(){
 
             builder.show()
         }
+    }
+
+
+
+    private fun login() {
+    val login = HashMap<String, String>()
+    login["uid"] = inputLoginId.text.toString()
+    login["password"] = inputLoginPw.text.toString()
+    loginBtn.isClickable = false
+        RetrofitClient.retrofitService.logIn(login).enqueue(object : Callback<Users> {
+            override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
+                when (response!!.code()) {
+                    200 -> {
+                        startActivity(Intent(this@LoginPageActivity, MainActivity::class.java))
+                        finish()
+                    }
+                    400 -> {
+                        loginBtn.isClickable = true
+                        Toast.makeText(this@LoginPageActivity, "존재하지 않습니다. 아이디 또는 비밀번호를 확인해주세요.",Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            override fun onFailure(call: Call<Users>?, t: Throwable?) {
+
+            }
+        })
     }
 }

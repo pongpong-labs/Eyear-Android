@@ -1,6 +1,7 @@
 package com.pongponglabs.eyear.api
 
 import com.pongponglabs.eyear.api.data.Users
+import com.pongponglabs.eyear.api.request.logInReq
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -70,10 +71,9 @@ interface API {
     fun logout(@Header("Authorization") token : String) : Call<Users>
 
 
+    @Headers("Content-Type: application/json")
     @POST("/member/login")
-    @FormUrlEncoded
-    fun logIn(@Field("uid") id : String,
-              @Field("password") pw : String) : Call<Users>
+    fun logIn(@Body logInReq: HashMap<String, String>) : Call<Users>
 
     @GET("/member/check/id")
     fun checkId(@Query("uid") uid: String) : Call<Users>
@@ -84,8 +84,8 @@ interface API {
 
     @POST("/member/find/id")
     @FormUrlEncoded
-    fun findId(@Field("name") name : String,
-               @Field("email") email: String) : Call<Users>
+    fun findId(@Query("name") name : String,
+               @Query("email") email: String) : Call<Users>
 
     @POST("/member/check/pw")
     @FormUrlEncoded

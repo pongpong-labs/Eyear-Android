@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient{
 
-    private const val BASE_URL = "http://pongponglabs.iptime.org:8080"
-    private var retrofitService: API
+    const val BASE_URL = "http://pongponglabs.iptime.org:8080"
+    var retrofitService: API
 
     init {
         val interceptor = HttpLoggingInterceptor()
