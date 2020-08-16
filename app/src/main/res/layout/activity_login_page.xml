@@ -49,7 +49,7 @@
         android:paddingStart="20dp"
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="비밀번호"
         android:maxLength="10"
         android:maxLines="1"

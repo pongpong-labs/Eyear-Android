@@ -1,7 +1,7 @@
 package com.pongponglabs.eyear.api
 
 import com.pongponglabs.eyear.api.data.Users
-import com.pongponglabs.eyear.api.request.logInReq
+import com.pongponglabs.eyear.api.request.findPwReq
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -97,9 +97,7 @@ interface API {
     fun changePw(@Field("idx") idx : Int,
                  @Field("new_pw") new_pw: String) : Call<Users>
 
+    @Headers("Content-Type: application/json")
     @POST("/member/init/pw")
-    @FormUrlEncoded
-    fun findPw(@Field("uid") id : String,
-               @Field("name") name : String,
-               @Field("email") email: String) : Call<Users>
+    fun findPw(@Body findPwReq: HashMap<String, String>) : Call<Users>
 }
