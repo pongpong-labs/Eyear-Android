@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.activity_main)
 
         navigationView.setOnNavigationItemSelectedListener(this)
+        navigationView.itemIconTintList = null;
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout,MainFragment()).commit()
     }
 

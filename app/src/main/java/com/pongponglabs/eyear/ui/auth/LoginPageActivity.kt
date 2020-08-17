@@ -20,6 +20,7 @@ class LoginPageActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
 
+
         loginBtn.setOnClickListener {
             login()
         }
@@ -54,6 +55,19 @@ class LoginPageActivity : AppCompatActivity(){
         }
     }
 
+
+    var time3: Long = 0
+    override fun onBackPressed() {
+        val time1 = System.currentTimeMillis()
+        val time2 = time1 - time3
+        if (time2 in 0..2000) {
+            finish()
+        }
+        else {
+            time3 = time1
+            Toast.makeText(applicationContext, "한번 더 누르시면 종료됩니다.",Toast.LENGTH_SHORT).show()
+        }
+    }
 
 
     private fun login() {

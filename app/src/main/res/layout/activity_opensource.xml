@@ -7,11 +7,20 @@
     android:orientation="vertical"
     tools:context=".ui.info.OpensourceActivity">
 
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/back_btn" />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/openSourceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/spoqabold"
         android:textColor="#686565"
         android:textSize="40dp"

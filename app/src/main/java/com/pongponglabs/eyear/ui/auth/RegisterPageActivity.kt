@@ -1,18 +1,25 @@
 package com.pongponglabs.eyear.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.pongponglabs.eyear.R
+import kotlinx.android.synthetic.main.activity_register_page.*
 
 class RegisterPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_page)
+
+        back_btn.setOnClickListener{
+            val intent = Intent(this, LoginPageActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
 
         val university = arrayOf("부산대학교", "부산가톨릭대학교", "부산교육대학교", "부산여자대학교", "부산외국어대학교")

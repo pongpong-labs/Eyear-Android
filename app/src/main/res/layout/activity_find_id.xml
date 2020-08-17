@@ -8,6 +8,17 @@
     android:orientation="vertical"
     tools:context=".ui.auth.FindPasswordActivity">
 
+  <ImageView
+      android:id="@+id/back_btn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="20dp"
+      android:src="@drawable/back_btn"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
+
+
   <com.google.android.material.textview.MaterialTextView
       android:id="@+id/tv_findId1"
       android:layout_width="wrap_content"
@@ -16,10 +27,12 @@
       android:fontFamily="@font/spoqabold"
       android:textColor="#686565"
       android:textSize="35dp"
+      android:layout_marginTop="80dp"
       android:text="아이디 찾기"
       app:layout_constraintBottom_toTopOf="@+id/inputFindName"
       app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toTopOf="parent"
+      />
 
   <com.google.android.material.textfield.TextInputEditText
       android:id="@+id/inputFindName"

@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/searchItem"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@drawable/main_btn"
         android:enabled="true"
         android:title="홈" />
     <item
         android:id="@+id/chatItem"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@drawable/chat_btn"
         android:enabled="true"
         android:title="채팅" />
     <item
         android:id="@+id/settingItem"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@drawable/setting_btn"
         android:enabled="true"
         android:title="설정" />
 </menu>
