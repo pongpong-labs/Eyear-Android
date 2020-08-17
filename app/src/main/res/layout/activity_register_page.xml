@@ -80,7 +80,6 @@
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="이름"
         android:maxLength="5"
         android:maxLines="1"/>
@@ -97,7 +96,6 @@
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="아이디"
         android:maxLength="10"
         android:maxLines="1"/>
@@ -114,7 +112,6 @@
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="이메일"
         android:maxLength="10"
         android:maxLines="1"/>
@@ -131,7 +128,6 @@
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="비밀번호"
         android:maxLength="10"
         android:maxLines="1"/>
@@ -147,7 +143,6 @@
         android:fontFamily="@font/spoqaregular"
         android:textColor="#686565"
         android:inputType="text"
-        android:background="@drawable/rounded_border_edittext"
         android:hint="비밀번호 확인"
         android:maxLength="10"
         android:maxLines="1"/>
