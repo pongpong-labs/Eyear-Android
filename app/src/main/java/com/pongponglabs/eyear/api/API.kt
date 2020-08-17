@@ -3,6 +3,7 @@ package com.pongponglabs.eyear.api
 import com.pongponglabs.eyear.api.data.Users
 import com.pongponglabs.eyear.api.data.findPw
 import com.pongponglabs.eyear.api.request.findPwReq
+import com.pongponglabs.eyear.api.request.joinReq
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -57,16 +58,9 @@ interface API {
 
 
     // 회원 정보 관리 및 로그인 관련 기능
+    @Headers("Content-Type: application/json")
     @POST("/member/join")
-    @FormUrlEncoded
-    fun join(@Field("uid") id : String,
-             @Field("password") pw: String,
-             @Field("role") role: String,
-             @Field("name") name : String,
-             @Field("email") email : String,
-             @Field("univ") univ : Int,
-             @Field("dept") dept : Int)
-            : Call<Users>
+    fun join(@Body joinReq: HashMap<String, Any>): Call<Users>
 
     @GET("/member/logout")
     fun logout(@Header("Authorization") token : String) : Call<Users>
