@@ -1,25 +1,30 @@
 package com.pongponglabs.eyear
 
 
-import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
+import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
-import android.speech.tts.TextToSpeech
-import android.widget.Toast
+import android.view.MotionEvent.ACTION_DOWN
+import android.view.MotionEvent.ACTION_UP
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+import com.pongponglabs.eyear.ui.auth.LoginPageActivity
+import com.pongponglabs.eyear.ui.fragment.MainFragment
+import kotlinx.android.synthetic.main.activity_register_page.*
 import kotlinx.android.synthetic.main.activity_script.*
+import kotlinx.android.synthetic.main.activity_script.back_btn
 import java.util.*
 
 
 class ScriptActivity : AppCompatActivity() {
-    companion object {
-        private const val REQUEST_CODE_STT = 1
-    }
+//    companion object {
+//        private const val REQUEST_CODE_STT = 1
+//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,39 +33,96 @@ class ScriptActivity : AppCompatActivity() {
 
         checkPermission()
 
-        btn_stt.setOnClickListener {
-            val sttIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-            sttIntent.putExtra(
-                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
-            )
-            sttIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-            sttIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "말하세요!")
+        val textView = findViewById<TextView>(R.id.output)
 
+        val speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+        val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        speechRecognizerIntent.putExtra(
+            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+        )
+        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
 
-            try {
-                startActivityForResult(sttIntent, REQUEST_CODE_STT)
-            } catch (e: ActivityNotFoundException) {
-                e.printStackTrace()
-                Toast.makeText(this, "Your device does not support STT.", Toast.LENGTH_LONG).show()
+        speechRecognizer.setRecognitionListener(object : RecognitionListener {
+            override fun onReadyForSpeech(bundle: Bundle) {}
+
+            override fun onBeginningOfSpeech() {}
+
+            override fun onRmsChanged(v: Float) {}
+
+            override fun onBufferReceived(bytes: ByteArray) {}
+
+            override fun onEndOfSpeech() {}
+
+            override fun onError(i: Int) {}
+
+            override fun onResults(bundle: Bundle) {
+                val matches =
+                    bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)//getting all the matches
+                if (matches != null)
+                    output.text = matches[0]
             }
-        }
-    }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            REQUEST_CODE_STT -> {
-                if (resultCode == Activity.RESULT_OK && data != null) {
-                    val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                    result?.let {
-                        val recognizedText = it[0]
-                        output.setText(recognizedText)
-                    }
+            override fun onPartialResults(bundle: Bundle) {}
+
+            override fun onEvent(i: Int, bundle: Bundle) {}
+        })
+
+
+        back_btn.setOnClickListener{
+            val intent = Intent(this, MainFragment::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btn_stt.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
+            when (motionEvent.action) {
+                ACTION_UP -> {
+                    speechRecognizer.stopListening()
+                    textView.hint = "dd"
+                }
+
+                ACTION_DOWN -> {
+                    speechRecognizer.startListening(speechRecognizerIntent)
+                    textView.setText("")
+                    textView.hint = "Listening..."
                 }
             }
-        }
+            false
+            }
+        )
     }
+//
+//    private fun stt(){
+//        val sttIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+//        sttIntent.putExtra(
+//            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+//            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+//        )
+//        sttIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+//        sttIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "말하세요!")
+//        try {
+//            startActivityForResult(sttIntent, REQUEST_CODE_STT)
+//        } catch (e: ActivityNotFoundException) {
+//            e.printStackTrace()
+//            Toast.makeText(this, "Your device does not support STT.", Toast.LENGTH_LONG).show()
+//        }
+//    }
+
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        when (requestCode) {
+//            REQUEST_CODE_STT -> {
+//                if (resultCode == Activity.RESULT_OK && data != null) {
+//                    val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+//                    result?.let {
+//                        val recognizedText = it[0]
+//                        output.text = recognizedText
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 
     var permissionlistener: PermissionListener = object : PermissionListener {

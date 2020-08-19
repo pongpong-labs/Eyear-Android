@@ -78,6 +78,7 @@ class LoginPageActivity : AppCompatActivity(){
             override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                 when (response!!.code()) {
                     200 -> {
+                        Toast.makeText(this@LoginPageActivity, "반갑습니다 ${response.body()!!.name} 님",Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@LoginPageActivity, MainActivity::class.java))
                         finish()
                     }

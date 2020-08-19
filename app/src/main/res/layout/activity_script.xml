@@ -4,18 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.script.ScriptActivity">
+    android:orientation="vertical"
+    tools:context=".ui.ScriptActivity">
 
-    <Button
-        android:id="@+id/btn_stt"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="stt" />
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_weight="0.3"
+            android:src="@drawable/back_btn" />
+        <Button
+            android:id="@+id/btn_stt"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_marginLeft="130dp"
+            android:layout_marginRight="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/spoqaregular"
+            android:text="자막 변환" />
+
+        <ImageView
+            android:id="@+id/textSize_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/text_size" />
+
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/output"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/spoqaregular"
+        android:textColor="#686565"
+        android:textSize="40dp"
         android:text="here"/>
 
 
