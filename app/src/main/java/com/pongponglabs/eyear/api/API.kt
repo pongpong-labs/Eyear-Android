@@ -2,8 +2,6 @@ package com.pongponglabs.eyear.api
 
 import com.pongponglabs.eyear.api.data.Users
 import com.pongponglabs.eyear.api.data.findPw
-import com.pongponglabs.eyear.api.request.findPwReq
-import com.pongponglabs.eyear.api.request.joinReq
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -63,7 +61,7 @@ interface API {
     fun join(@Body joinReq: HashMap<String, Any>): Call<Users>
 
     @GET("/member/logout")
-    fun logout(@Header("Authorization") token : String) : Call<Users>
+    fun logout(@Header("Authorization") Authorization: HashMap<String, String>) : Call<Users>
 
 
     @Headers("Content-Type: application/json")
