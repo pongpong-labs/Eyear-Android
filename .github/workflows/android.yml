@@ -23,11 +23,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Run Kotlin Linter
-        run: ./gradlew ktlintStagingDebugCheck
-
-      - name: Run Android Linter
-        run: ./gradlew lintStagingDebug
 
       - name: Run Unit Tests
         run: ./gradlew testStagingDebugUnitTest
