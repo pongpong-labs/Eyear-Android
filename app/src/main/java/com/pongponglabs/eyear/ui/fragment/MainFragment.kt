@@ -11,16 +11,17 @@ import com.pongponglabs.eyear.ScriptActivity
 import kotlinx.android.synthetic.main.activity_main_fragment.view.*
 
 class MainFragment : Fragment() {
+    private lateinit var mView: View
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.activity_main_fragment, container, false)
+        mView = inflater.inflate(R.layout.activity_main_fragment, container, false)
 
-        view.fab.setOnClickListener{
+        mView.fab.setOnClickListener{
             val intent = Intent(this@MainFragment.context, ScriptActivity::class.java)
             startActivity(intent)
         }
 
-        return view
+        return mView
     }
 }

@@ -24,14 +24,14 @@ class ChattingFragment : Fragment() {
         val view = inflater.inflate(R.layout.activity_chatting_fragment, container, false)
 
         val fragmentManager = (activity)!!.supportFragmentManager
-        mViewPager = view!!.findViewById(R.id.viewpager)
+        mViewPager = view.findViewById(R.id.viewpager)
         mViewPager!!.adapter =
             PagerAdapter(
                 fragmentManager
             )
         mViewPager!!.currentItem = 0
 
-        val tabLayout = view.findViewById<View>(R.id.tabLayout) as TabLayout
+        val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
         tabLayout.setupWithViewPager(mViewPager)
 
         tabLayout.getTabAt(0)!!.text = "메세지"
@@ -39,12 +39,8 @@ class ChattingFragment : Fragment() {
         mViewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) = tab.select()
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-
-            }
-            override fun onTabReselected(tab: TabLayout.Tab) {
-
-            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
         })
 
         return view
