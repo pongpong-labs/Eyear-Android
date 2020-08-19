@@ -49,7 +49,7 @@
             android:fontFamily="@font/spoqabold"
             android:textColor="#686565"
             android:textSize="30dp"
-            android:text="비밀번호 변경" />
+            android:text="비밀번호 찾기" />
 
         <View
             android:layout_width="match_parent"

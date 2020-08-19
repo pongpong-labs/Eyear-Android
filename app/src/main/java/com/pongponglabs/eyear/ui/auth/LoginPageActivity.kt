@@ -1,7 +1,9 @@
 package com.pongponglabs.eyear.ui.auth
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -71,25 +73,51 @@ class LoginPageActivity : AppCompatActivity(){
 
 
     private fun login() {
+        val uid =  inputLoginId.text.toString()
+        val password = inputLoginPw.text.toString()
+
         val login = HashMap<String, String>()
         login["uid"] = inputLoginId.text.toString().trim()
         login["password"] = inputLoginPw.text.toString().trim()
-        RetrofitClient.retrofitService.logIn(login).enqueue(object : Callback<Users> {
-            override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
-                when (response!!.code()) {
-                    200 -> {
-                        Toast.makeText(this@LoginPageActivity, "반갑습니다 ${response.body()!!.name} 님",Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this@LoginPageActivity, MainActivity::class.java))
-                        finish()
-                    }
-                    400 -> {
-                        Toast.makeText(this@LoginPageActivity, "존재하지 않은 사용자입니다.",Toast.LENGTH_SHORT).show()
+
+        if(TextUtils.isEmpty(uid)){
+            inputLoginId.error = "아이디를 입력하세요."
+            inputLoginId.setBackgroundColor(Color.WHITE)
+            inputLoginId.setTextColor(Color.BLACK)
+        }
+        if(TextUtils.isEmpty(password)){
+            inputLoginPw.error = "비밀번호를 입력하세요."
+            inputLoginId.setBackgroundColor(Color.WHITE)
+            inputLoginId.setTextColor(Color.BLACK)
+        }
+        if(!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password)) {
+            RetrofitClient.retrofitService.logIn(login).enqueue(object : Callback<Users> {
+                override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
+                    when (response!!.code()) {
+                        200 -> {
+                            Toast.makeText(
+                                this@LoginPageActivity,
+                                "반갑습니다 ${response.body()!!.name} 님",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            startActivity(Intent(this@LoginPageActivity, MainActivity::class.java))
+                            finish()
+                        }
+                        400 -> {
+                            Toast.makeText(
+                                this@LoginPageActivity,
+                                "존재하지 않은 사용자입니다.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
                 }
-            }
-            override fun onFailure(call: Call<Users>?, t: Throwable?) {
 
-            }
-        })
+                override fun onFailure(call: Call<Users>?, t: Throwable?) {
+
+                }
+            })
+
+        }
     }
 }
