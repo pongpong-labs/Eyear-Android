@@ -13,11 +13,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
-import com.pongponglabs.eyear.ui.auth.LoginPageActivity
 import com.pongponglabs.eyear.ui.fragment.MainFragment
-import kotlinx.android.synthetic.main.activity_register_page.*
 import kotlinx.android.synthetic.main.activity_script.*
-import kotlinx.android.synthetic.main.activity_script.back_btn
 import java.util.*
 
 
