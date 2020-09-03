@@ -29,9 +29,12 @@
             android:id="@+id/btn_stt"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textColor="#686565"
+            android:textSize="18dp"
+            android:background="@drawable/gradation_btn"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/spoqaregular"
-            android:text="자막 변환" />
+            android:text="자막 변환 시작" />
 
         </RelativeLayout>
 
@@ -39,117 +42,137 @@
     </LinearLayout>
 
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/spoqaregular"
-        android:textColor="#686565"
-        android:textSize="35dp"
-        android:text="정확도 평가 및 피드백"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/spoqaregular"
-        android:textColor="#686565"
-        android:textSize="20dp"
-        android:text="1. 자막의 정확도에 대해 평가해주세요"/>
-
-    <RadioGroup
-        android:id="@+id/radioGroup1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/accBtn1"
-            android:text="1"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <RadioButton
-            android:id="@+id/accBtn2"
-            android:text="2"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/accBtn3"
-            android:text="3"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/accBtn4"
-            android:text="4"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <RadioButton
-            android:id="@+id/accBtn5"
-            android:text="5"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </RadioGroup>
-
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/spoqaregular"
-        android:textColor="#686565"
-        android:textSize="20dp"
-        android:text="2. 자막 구현속도가 강의를 충분히 따라가는지 평가해주세요"/>
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:layout_marginTop="10dp"
+android:layout_marginStart="20dp"
+android:fontFamily="@font/spoqabold"
+android:textColor="#686565"
+android:textSize="35dp"
+android:text="정확도 평가 및 피드백"/>
 
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="20dp"
+android:fontFamily="@font/spoqaregular"
+android:textColor="#686565"
+android:textSize="20dp"
+android:text="1. 자막의 정확도에 대해 평가해주세요"/>
 
-        <RadioButton
-            android:id="@+id/acc2Btn1"
-            android:text="1"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+<RadioGroup
+android:id="@+id/radioGroup1"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginStart="20dp"
+android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/acc2Btn2"
-            android:text="2"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/acc2Btn3"
-            android:text="3"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/acc2Btn4"
-            android:text="4"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+<RadioButton
+    android:id="@+id/accBtn1"
+    android:text="1"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp"/>
 
-        <RadioButton
-            android:id="@+id/acc2Btn5"
-            android:text="5"
-            android:layoutDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+<RadioButton
+    android:id="@+id/accBtn2"
+    android:text="2"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+<RadioButton
+    android:id="@+id/accBtn3"
+    android:text="3"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+<RadioButton
+    android:id="@+id/accBtn4"
+    android:text="4"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
 
-    </RadioGroup>
+<RadioButton
+    android:id="@+id/accBtn5"
+    android:text="5"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+
+</RadioGroup>
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="20dp"
+android:fontFamily="@font/spoqaregular"
+android:textColor="#686565"
+android:textSize="20dp"
+android:text="2. 자막 구현속도가 강의를 충분히 따라가는지 평가해주세요"/>
+
+<RadioGroup
+android:id="@+id/radioGroup2"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginLeft="20dp"
+android:orientation="horizontal">
+
+<RadioButton
+    android:id="@+id/acc2Btn1"
+    android:text="1"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp"/>
+
+<RadioButton
+    android:id="@+id/acc2Btn2"
+    android:text="2"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+<RadioButton
+    android:id="@+id/acc2Btn3"
+    android:text="3"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+<RadioButton
+    android:id="@+id/acc2Btn4"
+    android:text="4"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+
+<RadioButton
+    android:id="@+id/acc2Btn5"
+    android:text="5"
+    android:layoutDirection="rtl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"/>
+
+</RadioGroup>
 
 
     <TextView
@@ -170,12 +193,17 @@
         android:layout_marginRight="20dp"/>
 
     <Button
-        android:id="@+id/saveStt_Btn"
+        android:id="@+id/saveSttBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
+        android:textColor="#686565"
+        android:background="@drawable/rounded_border_script"
         android:fontFamily="@font/spoqaregular"
         android:text="스크립트 저장" />
 
 
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

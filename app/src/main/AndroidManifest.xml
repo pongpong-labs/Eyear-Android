@@ -41,8 +41,10 @@
         <activity android:name=".ui.account.ProfileSettingActivity" />
         <activity android:name=".ui.account.AccountInfoActivity" />
         <activity android:name=".ui.auth.FindAuthDialog" />
-        <activity android:name=".ui.FeedbackActivity"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".ui.SaveScriptDialog"/>
+        <activity
+            android:name=".ui.FeedbackActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ScriptActivity"
             android:screenOrientation="landscape" />
