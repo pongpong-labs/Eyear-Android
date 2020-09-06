@@ -22,9 +22,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RegisterPageActivity : AppCompatActivity() {
+    val PREFERENCE = "pref_data"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_page)
+        val pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
+
 
 
         back_btn.setOnClickListener{
@@ -71,6 +76,20 @@ class RegisterPageActivity : AppCompatActivity() {
     }
 
     private fun join() {
+        val pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
+        val editor = pref.edit()
+
+        if(inputRegisterName.text.toString() != "" && inputRegisterId.text.toString() != "" && inputRegisterEmail.text.toString() != ""  && inputRegisterPassword.text.toString() != "" && inputRegisterPasswordValidator.text.toString() != "") {
+            editor.putString("name", inputRegisterName.text.toString())
+            editor.putString("uid", inputRegisterId.text.toString())
+            editor.putString("email", inputRegisterEmail.text.toString())
+            editor.putString("password", inputRegisterPassword.text.toString())
+            editor.putString("passwordValidator", inputRegisterPasswordValidator.text.toString())
+            editor.apply()
+            println("Log: " + pref.getString("name","") + pref.getString("uid","") + pref.getString("email","") + pref.getString("password","") + pref.getString("passwordValidator", ""))
+        }
+
+
         val name = inputRegisterName.text.toString()
         val uid = inputRegisterId.text.toString()
         val email = inputRegisterEmail.text.toString()
@@ -103,11 +122,12 @@ class RegisterPageActivity : AppCompatActivity() {
             inputRegisterPasswordValidator.error = "비밀번호를 입력하세요"
         }
 
-        if (!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password)  && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(passwordValidator)) {
+        if (!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(passwordValidator)) {
             RetrofitClient.retrofitService.join(join).enqueue(object : Callback<Users> {
                 override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                     when (response!!.code()) {
                         200 -> {
+                            editor.apply()
                             Toast.makeText(
                                 this@RegisterPageActivity,
                                 "회원가입에 성공했습니다. ${response.body()!!.name} 님",

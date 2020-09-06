@@ -1,9 +1,9 @@
 package com.pongponglabs.eyear.ui.auth
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -18,9 +18,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginPageActivity : AppCompatActivity(){
+    val PREFERENCE = "pref_data"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
+
+        val pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
+        println("token Test1 : "+ pref.getString("token",""))
 
 
         loginBtn.setOnClickListener {
@@ -73,6 +78,8 @@ class LoginPageActivity : AppCompatActivity(){
 
 
     private fun login() {
+        val pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
+        val editor = pref.edit()
         val uid =  inputLoginId.text.toString()
         val password = inputLoginPw.text.toString()
 
@@ -80,21 +87,23 @@ class LoginPageActivity : AppCompatActivity(){
         login["uid"] = inputLoginId.text.toString().trim()
         login["password"] = inputLoginPw.text.toString().trim()
 
+
         if(TextUtils.isEmpty(uid)){
             inputLoginId.error = "아이디를 입력하세요."
-            inputLoginId.setBackgroundColor(Color.WHITE)
-            inputLoginId.setTextColor(Color.BLACK)
         }
         if(TextUtils.isEmpty(password)){
             inputLoginPw.error = "비밀번호를 입력하세요."
-            inputLoginId.setBackgroundColor(Color.WHITE)
-            inputLoginId.setTextColor(Color.BLACK)
         }
         if(!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password)) {
             RetrofitClient.retrofitService.logIn(login).enqueue(object : Callback<Users> {
                 override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                     when (response!!.code()) {
                         200 -> {
+                            editor.putString("name", response.body()!!.name)
+                            editor.putString("token", response.body()!!.token)
+                            editor.apply()
+
+                            Log.d("Login 로그: ",pref.getString("name","") + pref.getString("token",""))
                             Toast.makeText(
                                 this@LoginPageActivity,
                                 "반갑습니다 ${response.body()!!.name} 님",
