@@ -67,7 +67,7 @@
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/spoqaregular"
                 android:textColor="#686565"
-                android:text=""
+                android:text="test"
                 android:textSize="30dp" />
 
         </LinearLayout>

@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.util.Log
+import android.util.TypedValue
 import android.view.MotionEvent.ACTION_DOWN
 import android.view.MotionEvent.ACTION_UP
 import android.view.View
@@ -15,6 +17,7 @@ import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import com.pongponglabs.eyear.ui.fragment.MainFragment
 import kotlinx.android.synthetic.main.activity_script.*
+import java.lang.reflect.Type
 import java.util.*
 
 
@@ -76,7 +79,7 @@ class ScriptActivity : AppCompatActivity() {
             when (motionEvent.action) {
                 ACTION_UP -> {
                     speechRecognizer.stopListening()
-                    textView.hint = "dd"
+                    textView.hint = "Stopping..."
                 }
 
                 ACTION_DOWN -> {
@@ -88,6 +91,12 @@ class ScriptActivity : AppCompatActivity() {
             false
             }
         )
+
+        textSize_btn.setOnClickListener {
+            val currentSize = textView.textSize
+            Log.d("TAG", currentSize.toString())
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, 150.0F)
+        }
     }
 //
 //    private fun stt(){
