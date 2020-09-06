@@ -66,8 +66,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/spoqaregular"
-                android:text="자막인데 대충 폰 화면의 1/4 정도는 되어야 잘 보이지 않을까 싶습니다..! 이정도면 한 두 문장은 바로 보이지 않을까요? 자막인데 대충 폰 화면의 1/4 정도는 되어야 잘 보이지 않을가 싶습니다..! 이정도면 한 두 문장은 바로 보이지 않을가요 ? 자막인데 대충 폰 화면의 1/4 정도는 되어야 잘 보이지 않을가 싶습니다..! 이정도면 한 두 문장은 바로 보이지 않을가요 ? 자막인데 대충 폰 화면의 1/4 정도는 되어야 잘 보이지 않을가 싶습니다..! 이정도면 한 두 문장은 바로 보이지 않을가요 ? 자막인데 대충 폰 화면의 1/4 정도는 되어야 "
                 android:textColor="#686565"
+                android:text=""
                 android:textSize="30dp" />
 
         </LinearLayout>
