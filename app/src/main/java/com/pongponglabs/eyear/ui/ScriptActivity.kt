@@ -1,4 +1,4 @@
-package com.pongponglabs.eyear
+package com.pongponglabs.eyear.ui
 
 
 import android.content.Intent
@@ -8,16 +8,16 @@ import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.util.Log
 import android.util.TypedValue
-import android.view.MotionEvent.ACTION_DOWN
-import android.view.MotionEvent.ACTION_UP
+import android.view.MotionEvent.*
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+import com.pongponglabs.eyear.R
 import com.pongponglabs.eyear.ui.fragment.MainFragment
 import kotlinx.android.synthetic.main.activity_script.*
-import java.lang.reflect.Type
 import java.util.*
 
 
@@ -42,30 +42,66 @@ class ScriptActivity : AppCompatActivity() {
             RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
         )
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
 
         speechRecognizer.setRecognitionListener(object : RecognitionListener {
-            override fun onReadyForSpeech(bundle: Bundle) {}
+            override fun onReadyForSpeech(bundle: Bundle) {
+                Toast.makeText(applicationContext, "음성인식을 시작합니다.", Toast.LENGTH_SHORT).show()
+            }
 
-            override fun onBeginningOfSpeech() {}
+            override fun onBeginningOfSpeech() {
+                Log.d("TAG", "onBeginningOfSpeech")
+            }
 
-            override fun onRmsChanged(v: Float) {}
+            override fun onRmsChanged(v: Float) {
+                if(v.toInt() == 10){
+                    Log.d("Rms", v.toString())
+                }
+            }
 
-            override fun onBufferReceived(bytes: ByteArray) {}
+            override fun onBufferReceived(bytes: ByteArray) {
+                Log.d("TAG", "onBufferReceived")
+            }
 
-            override fun onEndOfSpeech() {}
+            override fun onEndOfSpeech() {
+                Log.d("TAG", "onEndOfSpeech")
+            }
 
-            override fun onError(i: Int) {}
+            override fun onError(i: Int) {
+                 when(i){
+                     SpeechRecognizer.ERROR_AUDIO -> Toast.makeText(applicationContext,"오디오 에러",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> Toast.makeText(applicationContext,"퍼미션 없음",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_NETWORK -> Toast.makeText(applicationContext,"네트워크 에러",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> Toast.makeText(applicationContext,"네트웍 타임아웃",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_NO_MATCH -> Toast.makeText(applicationContext,"찾을 수 없음",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> Toast.makeText(applicationContext,"RECOGNIZER가 바쁨",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_SERVER -> Toast.makeText(applicationContext,"오디오 에러",Toast.LENGTH_SHORT).show()
+                     SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> Toast.makeText(applicationContext,"말하는 시간초과",Toast.LENGTH_SHORT).show()
+                    else -> Toast.makeText(applicationContext,"알 수 없는 오류 발생",Toast.LENGTH_SHORT).show()
+                }
+            }
 
             override fun onResults(bundle: Bundle) {
                 val matches =
-                    bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)//getting all the matches
+                    bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (matches != null)
                     output.text = matches[0]
+
+                if (matches != null) {
+                    for(i in 0 .. matches.size){
+                        Log.d("GoogleStt", "onResults text : " + matches[i]);
+                    }
+                }
+
             }
 
-            override fun onPartialResults(bundle: Bundle) {}
+            override fun onPartialResults(bundle: Bundle) {
+                Log.d("TAG", "onPartialResults")
+            }
 
-            override fun onEvent(i: Int, bundle: Bundle) {}
+            override fun onEvent(i: Int, bundle: Bundle) {
+                Log.d("TAG", "onEvent")
+            }
         })
 
 
@@ -80,6 +116,10 @@ class ScriptActivity : AppCompatActivity() {
                 ACTION_UP -> {
                     speechRecognizer.stopListening()
                     textView.hint = "Stopping..."
+                }
+
+                ACTION_MOVE -> {
+
                 }
 
                 ACTION_DOWN -> {

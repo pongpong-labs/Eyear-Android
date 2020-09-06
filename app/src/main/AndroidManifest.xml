@@ -46,7 +46,7 @@
             android:name=".ui.FeedbackActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".ScriptActivity"
+            android:name=".ui.ScriptActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".ui.auth.FindIdActivity" />
     </application>

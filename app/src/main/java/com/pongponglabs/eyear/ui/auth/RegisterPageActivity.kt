@@ -1,9 +1,10 @@
 package com.pongponglabs.eyear.ui.auth
 
+import android.app.ListActivity
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -14,15 +15,15 @@ import com.pongponglabs.eyear.R
 import com.pongponglabs.eyear.api.RetrofitClient
 import com.pongponglabs.eyear.api.data.Users
 import com.pongponglabs.eyear.ui.MainActivity
-import kotlinx.android.synthetic.main.activity_login_page.*
 import kotlinx.android.synthetic.main.activity_register_page.*
-import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class RegisterPageActivity : AppCompatActivity() {
     val PREFERENCE = "pref_data"
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,29 +49,34 @@ class RegisterPageActivity : AppCompatActivity() {
 
         val mySpinner1 = findViewById<Spinner>(R.id.register_univ_spinner)
 
-        val adapter1= ArrayAdapter(this,android.R.layout.simple_list_item_1,university)
+        val adapter1= ArrayAdapter(this, android.R.layout.simple_list_item_1, university)
         mySpinner1.adapter=adapter1
 
         mySpinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
-                println(university[i])
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, position: Int, l: Long) {
+                println(university[position])
+                val universitySelected = mySpinner1.selectedItem.toString()
+                Log.d("Spinner1", universitySelected)
             }
             override fun onNothingSelected(adapterView: AdapterView<*>) {
+                Log.d("LOGD", "NothingSelected")
             }
         }
 
-        val department = arrayOf("경영학과","기계공학과","디자인학과","의생명융합공학부","정보컴퓨터공학")
+        val department = arrayOf("경영학과", "기계공학과", "디자인학과", "의생명융합공학부", "정보컴퓨터공학")
 
         val mySpinner2 = findViewById<Spinner>(R.id.register_department_spinner)
 
-        val adapter2= ArrayAdapter(this,android.R.layout.simple_list_item_1,department)
+        val adapter2= ArrayAdapter(this, android.R.layout.simple_list_item_1, department)
         mySpinner2.adapter=adapter2
-
         mySpinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
                 println(department[i])
+                val departmentSelected = mySpinner2.selectedItem.toString()
+                Log.d("Spinner2", departmentSelected)
             }
             override fun onNothingSelected(adapterView: AdapterView<*>) {
+                Log.d("LOGD", "NothingSelected")
             }
         }
     }
@@ -86,7 +92,8 @@ class RegisterPageActivity : AppCompatActivity() {
             editor.putString("password", inputRegisterPassword.text.toString())
             editor.putString("passwordValidator", inputRegisterPasswordValidator.text.toString())
             editor.apply()
-            println("Log: " + pref.getString("name","") + pref.getString("uid","") + pref.getString("email","") + pref.getString("password","") + pref.getString("passwordValidator", ""))
+            Log.d("Log: ", pref.getString("name", "") + pref.getString("uid", "") + pref.getString("email", "") + pref.getString("password", "") + pref.getString("passwordValidator", "")
+            )
         }
 
 
@@ -103,7 +110,8 @@ class RegisterPageActivity : AppCompatActivity() {
         join["password"] = inputRegisterPassword.text.toString().trim()
         join["role"] = "ROLE_STUDENT"
         join["univ"] = 1
-        join["dept"] = 1
+        join["dept"] = 3
+
 
 
         if (TextUtils.isEmpty(name)) {
@@ -122,7 +130,9 @@ class RegisterPageActivity : AppCompatActivity() {
             inputRegisterPasswordValidator.error = "비밀번호를 입력하세요"
         }
 
-        if (!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(passwordValidator)) {
+        if (!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(
+                email
+            ) && !TextUtils.isEmpty(passwordValidator)) {
             RetrofitClient.retrofitService.join(join).enqueue(object : Callback<Users> {
                 override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                     when (response!!.code()) {
@@ -155,6 +165,16 @@ class RegisterPageActivity : AppCompatActivity() {
 
                 }
             })
+        }
+    }
+
+    private fun setDept(position: String) {
+        when(position){
+            "정보컴퓨터공학부" -> 1
+            "기계공학부" -> 2
+            "의생명융합공학부" -> 3
+            "전기공학부" -> 4
+            else -> null
         }
     }
 }

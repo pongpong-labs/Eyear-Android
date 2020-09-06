@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pongponglabs.eyear.R
-import com.pongponglabs.eyear.ScriptActivity
+import com.pongponglabs.eyear.ui.ScriptActivity
 import kotlinx.android.synthetic.main.activity_main_fragment.view.*
 
 class MainFragment : Fragment() {
