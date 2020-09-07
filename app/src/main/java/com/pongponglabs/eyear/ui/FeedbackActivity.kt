@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.pongponglabs.eyear.R
-import com.pongponglabs.eyear.ui.fragment.MainFragment
 import kotlinx.android.synthetic.main.activity_feedback.*
 
 class FeedbackActivity : AppCompatActivity() {
@@ -26,13 +25,9 @@ class FeedbackActivity : AppCompatActivity() {
             val btn1: Button? = v1.findViewById(R.id.saveScriptBtn)
 
             btn1!!.setOnClickListener {
-                val transaction = manager.beginTransaction()
-                val fragment = MainFragment()
-                transaction.replace(R.id.frameLayout, fragment)
-                transaction.addToBackStack(null)
-                transaction.commit()
-
-
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
             }
 
             builder.show()

@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
+
         <activity
             android:name=".ui.auth.FindPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -38,7 +40,9 @@
         <activity android:name=".ui.account.ProfileSettingActivity" />
         <activity android:name=".ui.account.AccountInfoActivity" />
         <activity android:name=".ui.auth.FindAuthDialog" />
-        <activity android:name=".ui.SaveScriptDialog"/>
+        <activity android:name=".ui.SaveScriptDialog" />
+        <activity android:name=".ui.AddClassDialog"/>
+        <activity android:name=".ui.AddClassActivity"/>
         <activity
             android:name=".ui.FeedbackActivity"
             android:screenOrientation="landscape" />

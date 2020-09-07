@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pongponglabs.eyear.R
+import com.pongponglabs.eyear.ui.AddClassActivity
 import com.pongponglabs.eyear.ui.ScriptActivity
 import kotlinx.android.synthetic.main.activity_main_fragment.view.*
 
@@ -19,6 +20,11 @@ class MainFragment : Fragment() {
 
         mView.fab.setOnClickListener{
             val intent = Intent(this@MainFragment.context, ScriptActivity::class.java)
+            startActivity(intent)
+        }
+
+        mView.addClassBtn.setOnClickListener{
+            val intent = Intent(this@MainFragment.context, AddClassActivity::class.java)
             startActivity(intent)
         }
 
