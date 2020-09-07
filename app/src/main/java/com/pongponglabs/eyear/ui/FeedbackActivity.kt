@@ -10,12 +10,16 @@ import com.pongponglabs.eyear.R
 import kotlinx.android.synthetic.main.activity_feedback.*
 
 class FeedbackActivity : AppCompatActivity() {
-    val manager = supportFragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback)
 
+        btn_stt.setOnClickListener{
+            val intent = Intent(this, ScriptActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         saveSttBtn.setOnClickListener {
             Toast.makeText(this@FeedbackActivity, "스크립트가 저정되었습니다.", Toast.LENGTH_SHORT).show()

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.pongponglabs.eyear.R
+import com.pongponglabs.eyear.ui.chat.Chat
 import com.pongponglabs.eyear.ui.fragment.message.AlertFragment
 import com.pongponglabs.eyear.ui.fragment.message.MessageFragment
 

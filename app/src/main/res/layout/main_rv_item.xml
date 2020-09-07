@@ -1,0 +1,67 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/item_border"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view2"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        app:cardCornerRadius="40dp"
+        android:layout_centerHorizontal="true">
+
+    <ImageView
+        android:id="@+id/professorPhotoImg"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/classNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        tools:text="UX/UI 디자인 송교수"/>
+
+    <TextView
+        android:id="@+id/messageTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#959595"
+        android:fontFamily="@font/spoqabold"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/classNameTxt"
+        tools:text="성적 좋게 주세요" />
+
+    <TextView
+        android:id="@+id/datetimeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:textColor="#959595"
+        android:textSize="10sp"
+        android:fontFamily="@font/spoqabold"
+        app:layout_constraintBottom_toBottomOf="@+id/messageTxt"
+        app:layout_constraintStart_toEndOf="@+id/messageTxt"
+        app:layout_constraintTop_toTopOf="@+id/messageTxt"
+        tools:text="2020.09.17 09:15" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

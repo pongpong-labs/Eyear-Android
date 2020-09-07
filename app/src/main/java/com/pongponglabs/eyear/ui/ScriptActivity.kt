@@ -3,6 +3,8 @@ package com.pongponglabs.eyear.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
@@ -87,11 +89,11 @@ class ScriptActivity : AppCompatActivity() {
                 if (matches != null)
                     output.text = matches[0]
 
-                if (matches != null) {
-                    for(i in 0 .. matches.size){
-                        Log.d("GoogleStt", "onResults text : " + matches[i]);
-                    }
-                }
+//                if (matches != null) {
+//                    for(i in 0 .. matches.size){
+//                        Log.d("GoogleStt", "onResults text : " + matches[i]);
+//                    }
+//                }
 
             }
 
@@ -116,9 +118,15 @@ class ScriptActivity : AppCompatActivity() {
                 ACTION_UP -> {
                     speechRecognizer.stopListening()
                     textView.hint = "Stopped"
-                    val intent = Intent(this, FeedbackActivity::class.java)
-                    startActivity(intent)
-                    finish()
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        startActivity(
+                            Intent(this, FeedbackActivity::class.java))},
+                        5000L)
+
+//                    val intent = Intent(this, FeedbackActivity::class.java)
+//                    startActivity(intent)
+//                    finish()
                 }
 
                 ACTION_MOVE -> {

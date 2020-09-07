@@ -58,7 +58,7 @@
                 android:fontFamily="@font/spoqabold"
                 android:textColor="#686565"
                 android:textSize="35dp"
-                android:text="김학생" />
+                android:text="송주현" />
 
 
             <com.google.android.material.textview.MaterialTextView
@@ -67,8 +67,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/spoqabold"
                 android:textColor="#686565"
-                android:textSize="30dp"
-                android:text="부산대학교 - 기계 공학부" />
+                android:textSize="25dp"
+                android:text="부산대학교 - 의생명융합공학부" />
 
 
         </LinearLayout>
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/spoqabold"
             android:textColor="#686565"
-            android:textSize="38dp"
+            android:textSize="30dp"
             android:text="내 정보 및 계정 관리" />
 
         <View
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/spoqabold"
             android:textColor="#686565"
-            android:textSize="38dp"
+            android:textSize="30dp"
             android:text="문의 및 버그 제보" />
 
         <View
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/spoqabold"
             android:textColor="#686565"
-            android:textSize="38dp"
+            android:textSize="30dp"
             android:text="앱 정보" />
 
     </LinearLayout>

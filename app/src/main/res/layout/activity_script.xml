@@ -67,7 +67,7 @@
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/spoqaregular"
                 android:textColor="#686565"
-                android:text="test"
+                android:text="자막 변환 버튼을 눌러주세요!"
                 android:textSize="30dp" />
 
         </LinearLayout>

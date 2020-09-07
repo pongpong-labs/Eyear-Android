@@ -17,7 +17,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -56,12 +55,19 @@ dependencies {
     implementation 'com.github.AppIntro:AppIntro:6.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation "android.arch.persistence.room:runtime:1.1.1"
-    kapt "android.arch.persistence.room:compiler:1.1.1"
+
     kaptTest "android.arch.persistence.room:testing:1.1.1"
 
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.room:room-runtime:2.2.5"
+    kapt  "androidx.room:room-compiler:2.2.5"
 
+    if (JavaVersion.current().ordinal() > JavaVersion.VERSION_1_9.ordinal()) {
+        kapt "com.sun.xml.bind:jaxb-core:2.3.0.1"
+        kapt "javax.xml.bind:jaxb-api:2.3.1"
+        kapt "com.sun.xml.bind:jaxb-impl:2.3.2"
+
+    }
+        testImplementation 'junit:junit:4.13'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
