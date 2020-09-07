@@ -30,6 +30,8 @@ class MainFragment : Fragment() {
             startActivity(intent)
         }
 
+
+
         return mView
     }
 }

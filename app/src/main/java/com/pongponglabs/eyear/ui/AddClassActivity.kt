@@ -1,15 +1,16 @@
 package com.pongponglabs.eyear.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.pongponglabs.eyear.R
-import com.pongponglabs.eyear.ui.fragment.MainFragment
 import kotlinx.android.synthetic.main.activity_add_class.*
 
 class AddClassActivity : AppCompatActivity() {
@@ -51,9 +52,17 @@ class AddClassActivity : AppCompatActivity() {
         }
 
         addClassFinishBtn.setOnClickListener{
-            val intent = Intent(this, MainActivity()::class.java)
-            startActivity(intent)
-            finish()
+            val builder = AlertDialog.Builder(this)
+            val v1 = layoutInflater.inflate(R.layout.activity_add_class_dialog, null)
+            builder.setView(v1)
+            val btn1: Button? = v1.findViewById(R.id.classAddBtn)
+
+            btn1!!.setOnClickListener{
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            builder.show()
         }
     }
 }

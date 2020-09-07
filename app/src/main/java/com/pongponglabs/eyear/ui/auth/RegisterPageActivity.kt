@@ -129,9 +129,7 @@ class RegisterPageActivity : AppCompatActivity() {
             inputRegisterPasswordValidator.error = "비밀번호를 입력하세요"
         }
 
-        if (!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(
-                email
-            ) && !TextUtils.isEmpty(passwordValidator)) {
+        if (!TextUtils.isEmpty(uid) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(passwordValidator)) {
             RetrofitClient.retrofitService.join(join).enqueue(object : Callback<Users> {
                 override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                     when (response!!.code()) {
@@ -139,7 +137,7 @@ class RegisterPageActivity : AppCompatActivity() {
                             editor.apply()
                             Toast.makeText(
                                 this@RegisterPageActivity,
-                                "회원가입에 성공했습니다. ${response.body()!!.name} 님",
+                                "회원가입에 성공했습니다.",
                                 Toast.LENGTH_SHORT
                             ).show()
                             startActivity(

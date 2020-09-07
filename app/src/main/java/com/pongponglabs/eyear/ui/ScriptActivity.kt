@@ -1,6 +1,7 @@
 package com.pongponglabs.eyear.ui
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -8,6 +9,7 @@ import android.os.Looper
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.speech.SpeechRecognizer.ERROR_RECOGNIZER_BUSY
 import android.util.Log
 import android.util.TypedValue
 import android.view.MotionEvent.*
@@ -21,6 +23,7 @@ import com.pongponglabs.eyear.R
 import com.pongponglabs.eyear.ui.fragment.MainFragment
 import kotlinx.android.synthetic.main.activity_script.*
 import java.util.*
+import kotlin.system.exitProcess
 
 
 class ScriptActivity : AppCompatActivity() {
@@ -29,6 +32,7 @@ class ScriptActivity : AppCompatActivity() {
 //    }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_script)
@@ -124,9 +128,6 @@ class ScriptActivity : AppCompatActivity() {
                             Intent(this, FeedbackActivity::class.java))},
                         5000L)
 
-//                    val intent = Intent(this, FeedbackActivity::class.java)
-//                    startActivity(intent)
-//                    finish()
                 }
 
                 ACTION_MOVE -> {
@@ -136,7 +137,8 @@ class ScriptActivity : AppCompatActivity() {
                 ACTION_DOWN -> {
                     speechRecognizer.startListening(speechRecognizerIntent)
                     textView.setText("")
-                    textView.hint = "Listening..."
+                    textView.hint = "강의를 듣고 있습니다..."
+
                 }
             }
             false
@@ -149,37 +151,6 @@ class ScriptActivity : AppCompatActivity() {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, 150.0F)
         }
     }
-//
-//    private fun stt(){
-//        val sttIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-//        sttIntent.putExtra(
-//            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-//            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
-//        )
-//        sttIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-//        sttIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "말하세요!")
-//        try {
-//            startActivityForResult(sttIntent, REQUEST_CODE_STT)
-//        } catch (e: ActivityNotFoundException) {
-//            e.printStackTrace()
-//            Toast.makeText(this, "Your device does not support STT.", Toast.LENGTH_LONG).show()
-//        }
-//    }
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        when (requestCode) {
-//            REQUEST_CODE_STT -> {
-//                if (resultCode == Activity.RESULT_OK && data != null) {
-//                    val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-//                    result?.let {
-//                        val recognizedText = it[0]
-//                        output.text = recognizedText
-//                    }
-//                }
-//            }
-//        }
-//    }
 
 
     var permissionlistener: PermissionListener = object : PermissionListener {
