@@ -115,7 +115,10 @@ class ScriptActivity : AppCompatActivity() {
             when (motionEvent.action) {
                 ACTION_UP -> {
                     speechRecognizer.stopListening()
-                    textView.hint = "Stopping..."
+                    textView.hint = "Stopped"
+                    val intent = Intent(this, FeedbackActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
 
                 ACTION_MOVE -> {

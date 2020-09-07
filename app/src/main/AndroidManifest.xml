@@ -32,9 +32,6 @@
         <activity android:name=".ui.info.OpensourceActivity" />
         <activity android:name=".ui.info.TermsActivity" />
         <activity android:name=".ui.info.VersionActivity" />
-        <activity android:name=".ui.fragment.MainFragment" />
-        <activity android:name=".ui.fragment.ChattingFragment" />
-        <activity android:name=".ui.fragment.SettingFragment" />
         <activity android:name=".ui.auth.RegisterPageActivity" />
         <activity android:name=".ui.account.SecessionActivity" />
         <activity android:name=".ui.account.PasswordChangeActivity" />
